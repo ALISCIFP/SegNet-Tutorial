@@ -5,7 +5,7 @@ layer {
   top: "data"
   top: "label"
   dense_image_data_param {
-    source: "/home/jl/ifp/zeshen/GitRepo/SegNet/CamVid/test.txt"	# Change this to the absolute path to your data file
+    source: "/home/zshen5/Data/ImageNet2016/ADEChallengeData2016/img_val.txt"	# Change this to the absolute path to your data file
     batch_size: 1
   }
 }
