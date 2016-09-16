@@ -9,6 +9,7 @@ import pylab
 from sklearn.preprocessing import normalize
 caffe_root = '/home/zshen5/GitHub/SegNet-Tutorial/caffe-segnet/' 			# Change this to the absolute directoy to SegNet Caffe
 import sys
+import cv2
 sys.path.insert(0, caffe_root + 'python')
 
 import caffe
@@ -218,10 +219,10 @@ for i in range(0, args.iter):
 
 	image = np.transpose(image, (1,2,0))
 	output = np.transpose(output, (1,2,0))
-	image = image[:,:,(2,1,0)]                    
-	scipy.misc.toimage(rgb,cmin=0.0,cmax=255).save('/home/zshen5/Data/ImageNet2016/ADEChallengeData2016/predictions_camvid38kv2/rgb/ADE_val_0000'+ str('%04d' %(i+1)) +'.png')
-	scipy.misc.toimage(ind,cmin=0.0,cmax=150).save('/home/zshen5/Data/ImageNet2016/ADEChallengeData2016/predictions_camvid38kv2/img/ADE_val_0000'+ str('%04d'%(i+1)) +'.png')
-
+	image = image[:,:,(2,1,0)] 
+	print 'saving',i+1,'th rgb and greyscale img'
+	cv2.imwrite('/home/zshen5/Data/ImageNet2016/ADEChallengeData2016/predictions_camvid88k/rgb/ADE_val_0000'+ str('%04d' %(i+1)) +'.png',rgb)
+	cv2.imwrite('/home/zshen5/Data/ImageNet2016/ADEChallengeData2016/predictions_camvid88k/img/ADE_val_0000'+ str('%04d'%(i+1)) +'.png',ind)
 	# plt.figure()
 	# plt.imshow(image,vmin=0, vmax=1)
 	# plt.figure()
@@ -232,4 +233,6 @@ for i in range(0, args.iter):
 
 
 print 'Success!'
+
+
 
