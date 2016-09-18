@@ -110,7 +110,7 @@ def crf(fn_im,fn_anno,fn_output,colorful_fn_output):
 
     # Run five inference steps.
 
-    Q = d.inference(5)
+    Q = d.inference(10)
 
     # Find out the most probable class for each pixel.
     MAP = np.argmax(Q, axis=0)
@@ -329,7 +329,7 @@ def crf(fn_im,fn_anno,fn_output,colorful_fn_output):
     imsave(fn_output,crf_img)
     # Just randomly manually run inference iterations
     Q, tmp1, tmp2 = d.startInference()
-    for i in range(5):
+    for i in range(10):
         print("KL-divergence at {}: {}".format(i, d.klDivergence(Q)))
         d.stepInference(Q, tmp1, tmp2)
 

@@ -221,10 +221,10 @@ for i in range(0, args.iter):
 	output = np.transpose(output, (1,2,0))
 	image = image[:,:,(2,1,0)] 
 	print 'saving',i+1,'th rgb and greyscale img'
-	cv2.imwrite('/home/zshen5/Data/ImageNet2016/ADEChallengeData2016/predictions_camvid100k/rgb/ADE_val_0000'+ str('%04d' %(i+1)) +'.png',rgb)
-	cv2.imwrite('/home/zshen5/Data/ImageNet2016/ADEChallengeData2016/predictions_camvid100k/img/ADE_val_0000'+ str('%04d'%(i+1)) +'.png',ind)
-    
 
+    
+	cv2.imwrite('/home/zshen5/Data/ImageNet2016/release_test/predictions_camvid100k/rgb/ADE_test_0000'+ str('%04d' %(i+1)) +'.png',rgb)
+	cv2.imwrite('/home/zshen5/Data/ImageNet2016/release_test/predictions_camvid100k/img/ADE_test_0000'+ str('%04d'%(i+1)) +'.png',ind)
 	# plt.figure()
 	# plt.imshow(image,vmin=0, vmax=1)
 	# plt.figure()
@@ -234,7 +234,7 @@ for i in range(0, args.iter):
 	# plt.show()
 
 
-print 'Gen Success!'
+print 'Success!'
 
 
 
